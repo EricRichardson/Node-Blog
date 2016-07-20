@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 New Post
+  form(action="/posts" method="POST")
+    .form-group
+      label(for="title") Title
+      input.form-control(id="title" name="title" type="text")
+      - if(errors.title)
+        .help-block= errors.title
+    .form-group
+      label(for="body") Body
+      textarea.form-control(id="body" name="body" type="text")
+      - if(errors.body)
+        .help-block= errors.body
+    .form-group
+      input.btn.btn-primary(type="submit" value="Make Post")

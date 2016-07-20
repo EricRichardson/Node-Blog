@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  h1= post.title
+  p= post.body
+  form(action=`/posts/${post.id}/edit?_method=get` method="POST")
+    input(type='submit' value='Edit')
+  form(action=`/posts/${post.id}?_method=delete` method="POST")
+    input(type='submit' value='Delete')
